@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+  
+  *, *:after, *:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-size: 100%;
+    
+    color: #3d3536;
+    background-color: white;
+  }
+  
+  body, html {
+    /* important */
+    height: 100%;
+    font-family: 'Poppins','Sans-Serif';
+  }
+
+
+  header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: background-color .5s ease;
+    z-index: 1000;
+    
+}
+
+.nav_container{
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  
+  
+}
+
+.nav{
+  
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  transition: height .5s ease;
+  justify-content: space-between;
+  
+}
+
+.nav a{
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  
+}
+
+.nav .logo{
+  font-family: 'sans-serif';
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.nav-list{
+  
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  /*margin-right: auto;
+  margin-left: 4rem; */
+  
+}
+
+.nav-link{
+  margin: 0 2rem;
+  position: relative;
+}
+.nav-link::after{
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color:white;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .5s ease;
+}
+
+.nav-link:hover::after{
+  transform: scaleX(1);
+}
+
+
+.scrolling-active{
+  background-color:white;
+  box-shadow: 0 3px 1rem rgba(0,0,0,.1);
+}
+
+.scrolling-active .nav a{
+  color: black;
+}
+
+.scrolling-active .nav{
+  height: 4rem;
+}
+.scrolling-active .nav-link::after{
+  background-color:black;
+}
+
+
+
+  /* -------------------------------- 
+  
+  Modules - reusable parts of our design
+  
+  -------------------------------- */
+  .cd-container {
+    /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+    width: 100%;
+    max-width: 968px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .cd-container h2{
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 600;
+    line-height: 2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .cd-container::after {
+    /* clearfix */
+    content: '';
+    display: table;
+    clear: both;
+  }
+  
+  .cd-main-content {
+    /* you need to assign a min-height to the main content so that the children can inherit it*/
+    height: 100%;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .cd-fixed-bg {
+    position: relative;
+    min-height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 1;
+  }
+  .cd-fixed-bg h1, .cd-fixed-bg h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 90%;
+    max-width: 1170px;
+    text-align: center;
+    font-size: 30px;
+    font-size: 1.875rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    color: white;
+  }
+  .cd-fixed-bg.cd-bg-1 {
+    background-image: url("Blog_Images/morocco-1717190.jpg");
+  }
+  .cd-fixed-bg.cd-bg-2 {
+    background-image: url("Blog_Images/téléchargement\ \(10\).jpg");
+  }
+  .cd-fixed-bg.cd-bg-3 {
+    background-image: url("Blog_Images/dirham-3479568.jpg");
+  }
+  .cd-fixed-bg.cd-bg-4 {
+    background-image: url("Blog_Images/cover-1-1170x675.jpg");
+  }
+  @media only screen and (min-width: 320px) {
+    .cd-fixed-bg h1, .cd-fixed-bg h2 {
+      font-size: 36px;
+    }
+  }
+  @media only screen and (min-width: 480px) {
+    .cd-fixed-bg {
+      background-attachment: fixed;
+    }
+    .cd-fixed-bg h1, .cd-fixed-bg h2 {
+      font-size: 48px;
+      font-weight: 300;
+    }
+  }
+  
+  .cd-scrolling-bg {
+    position: relative;
+    min-height: 120%;
+    padding: 4em 0;
+    line-height: 1.6;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    
+  }
+  .cd-scrolling-bg.cd-color-1 {
+    background-color: #E6E0E7;
+    color: black;
+  }
+  .cd-scrolling-bg.cd-color-2 {
+    background-color: #E6E0E7;
+    color: black;
+  }
+  .cd-scrolling-bg.cd-color-3 {
+    background-color: #E6E0E7;
+    color: black;
+  }
+  @media only screen and (min-width: 480px) {
+    .cd-scrolling-bg {
+      padding: 8em 0;
+      font-size: 20px;
+      font-size: 1.25rem;
+      line-height: 2;
+      font-weight: 300;
+    }
+  }
+
+
+
+
+  
+
+  /*Footer*/
+.footer {
+  background-color: #302f2f;
+}
+.footer .container {
+  padding: 20px;
+  margin-top: 20px;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+  gap: 18px;
+  
+}
+.footer .container > div {
+  padding: 10px;
+}
+.footer .container h4 {
+  font-size: 30px;
+  color: white;
+}
+.footer .container p {
+  margin: 20px 0;
+  line-height: 1.8;
+  font-size: 15px;
+  color: white;
+}
+.footer .container .links ul {
+  padding: 10px 0;
+}
+.footer .container .links ul li {
+  margin: 10px 0;
+  list-style: none;
+}
+.footer .container .links ul li a {
+    color: white;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  
+}
+.footer .container .links ul li:hover a {
+  color: #c79c60;
+}
+.footer .container .social .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.footer .container .social .icons li {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #505050;
+  margin-right: 20px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.footer .container .social .icons li i {
+  color: white;
+  font-size: 20px;
+}
+.footer .container .social .icons li:hover {
+  background-color: #c79c60;
+}
+.footer > p {
+  background-color: rgba(80, 80, 80, 0.5);
+  text-align: center;
+  height: 100%;
+  padding: 20px;
+}
+/*end*/
+  
